@@ -520,65 +520,37 @@ swim.Position = UDim2.new(0.25, 0, 0.13, 0)
 swim.BackgroundColor3 = Color3.new(0, 0, 0)
 swim.BorderColor3 = Color3.new(0, 0, 1)
 swim.BorderSizePixel = 1
-swim.Text = "swim fly"
+swim.Text = "walk on air"
 swim.BackgroundTransparency = 0 
 swim.TextColor3 = Color3.new(255, 255, 255)
 swim.Font = Enum.Font.Code
 swim.Parent = sf1
-local swim = script.Parent
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-local hrp = character:WaitForChild("HumanoidRootPart")
+swim.MouseButton1Click:Connect(function()
+	local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+	local hrp = character:WaitForChild("HumanoidRootPart")
 
-local flying = false
-local bodyVelocity = nil
-local userInput = game:GetService("UserInputService")
+	-- Create an invisible platform below the player
+	local airWalk = Instance.new("Part")
+	airWalk.Size = Vector3.new(10, 1, 10)
+	airWalk.Anchored = true
+	airWalk.Transparency = 1
+	airWalk.CanCollide = true
+	airWalk.Name = "AirWalkPlatform"
+	airWalk.Parent = workspace
 
-local function toggleSwimFly()
-	flying = not flying
+	-- Update position of the platform under the player's feet
+	local runService = game:GetService("RunService")
+	local updateConnection
 
-	if flying then
-		-- Enable flying
-		bodyVelocity = Instance.new("BodyVelocity")
-		bodyVelocity.Velocity = Vector3.new(0, 0, 0)
-		bodyVelocity.MaxForce = Vector3.new(1e5, 1e5, 1e5)
-		bodyVelocity.P = 1250
-		bodyVelocity.Parent = hrp
-
-		humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
-
-		-- Input handling
-		userInput.InputBegan:Connect(function(input, gpe)
-			if not flying or gpe then return end
-
-			if input.KeyCode == Enum.KeyCode.W then
-				bodyVelocity.Velocity = hrp.CFrame.LookVector * 50
-			elseif input.KeyCode == Enum.KeyCode.S then
-				bodyVelocity.Velocity = -hrp.CFrame.LookVector * 50
-			elseif input.KeyCode == Enum.KeyCode.Space then
-				bodyVelocity.Velocity = Vector3.new(0, 50, 0)
-			elseif input.KeyCode == Enum.KeyCode.LeftControl then
-				bodyVelocity.Velocity = Vector3.new(0, -50, 0)
-			end
-		end)
-
-		userInput.InputEnded:Connect(function(input)
-			if bodyVelocity and flying then
-				bodyVelocity.Velocity = Vector3.new(0, 0, 0)
-			end
-		end)
-	else
-		-- Disable flying
-		if bodyVelocity then
-			bodyVelocity:Destroy()
-			bodyVelocity = nil
+	updateConnection = runService.RenderStepped:Connect(function()
+		if character and hrp then
+			airWalk.Position = hrp.Position - Vector3.new(0, 3, 0) -- adjust height if needed
+		else
+			updateConnection:Disconnect()
 		end
-		humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
-	end
-end
+	end)
+end)
 
-swim.MouseButton1Click:Connect(toggleSwimFly)
 
 
 local vfly = Instance.new("TextButton")
@@ -674,65 +646,40 @@ newfly.Position = UDim2.new(0.75, 0, 0.13, 0)
 newfly.BackgroundColor3 = Color3.new(0, 0, 0)
 newfly.BorderColor3 = Color3.new(0, 0, 1)
 newfly.BorderSizePixel = 1
-newfly.Text = "new fly"
+newfly.Text = "goto moon"
 newfly.BackgroundTransparency = 0 
 newfly.TextColor3 = Color3.new(255, 255, 255)
 newfly.Font = Enum.Font.Code
 newfly.Parent = sf1
-local newfly = script.Parent
-local player = game.Players.LocalPlayer
+local player = Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
-local RunService = game:GetService("RunService")
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 
-local antiFallForce = nil
-local antiFallConnection = nil
+local floating = false
+local floatConnection
 
--- Function to apply anti-fall force
-local function applyAntiFall(hrp)
-	if antiFallForce then return end -- Already applied
-
-	antiFallForce = Instance.new("BodyVelocity")
-	antiFallForce.Velocity = Vector3.new(0, 0, 0)
-	antiFallForce.MaxForce = Vector3.new(0, math.huge, 0)
-	antiFallForce.P = 10000
-	antiFallForce.Name = "AntiFallForce"
-	antiFallForce.Parent = hrp
-
-	-- Optional: Maintain 0 Y velocity if needed
-	antiFallConnection = RunService.RenderStepped:Connect(function()
-		if antiFallForce and hrp then
-			antiFallForce.Velocity = Vector3.new(0, 0, 0)
-		end
-	end)
-end
-
--- Function to remove anti-fall force
-local function removeAntiFall()
-	if antiFallForce then
-		antiFallForce:Destroy()
-		antiFallForce = nil
-	end
-	if antiFallConnection then
-		antiFallConnection:Disconnect()
-		antiFallConnection = nil
-	end
-end
-
--- Button click handler
 newfly.MouseButton1Click:Connect(function()
-	character = player.Character or player.CharacterAdded:Wait()
-	local hrp = character:WaitForChild("HumanoidRootPart")
+	floating = not floating
 
-	-- Move up by 10 studs
-	hrp.CFrame = hrp.CFrame + Vector3.new(0, 10, 0)
-
-	-- Prevent falling
-	applyAntiFall(hrp)
-end)
-
--- Reset disables effect
-player.CharacterAdded:Connect(function()
-	removeAntiFall() -- Remove force on reset
+	if floating then
+		-- Start moving up
+		floatConnection = RunService.RenderStepped:Connect(function()
+			if humanoidRootPart then
+				humanoidRootPart.Velocity = Vector3.new(0, 50, 0) -- Constant upward force
+			end
+		end)
+		newfly.Text = "Stop Flying"
+	else
+		-- Stop moving up
+		if floatConnection then
+			floatConnection:Disconnect()
+			floatConnection = nil
+		end
+		if humanoidRootPart then
+			humanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+		end
+		newfly.Text = "Start Flying"
+	end
 end)
 
 
