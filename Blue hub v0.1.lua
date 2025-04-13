@@ -457,21 +457,6 @@ runService.RenderStepped:Connect(function(dt)
 		end
 	end
 end)
-What It Does:
-Increases tpwalk speed by 5 each time the button is clicked.
-
-Moves the character forward manually based on MoveDirection and current tpSpeed.
-
-Uses RenderStepped for smooth teleport-like movement.
-
-Let me know if you want it to work with mobile touch controls or add side/back directions!
-
-
-
-
-
-
-
 
 
 
