@@ -568,41 +568,6 @@ vfly.MouseButton1Click:Connect(function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ScpGuest666/Random-Roblox-script/refs/heads/main/Roblox%20Fe%20Vehicle%20Fly%20GUI%20script'))()
 end)
 
-local newfly = Instance.new("TextButton")
-newfly.Size = UDim2.new(0.2, 0, 0.1, 0)
-newfly.Position = UDim2.new(0.75, 0, 0.13, 0)
-newfly.BackgroundColor3 = Color3.new(0, 0, 0)
-newfly.BorderColor3 = Color3.new(0, 0, 1)
-newfly.BorderSizePixel = 1
-newfly.Text = "goto moon"
-newfly.BackgroundTransparency = 0 
-newfly.TextColor3 = Color3.new(255, 255, 255)
-newfly.Font = Enum.Font.Code
-newfly.Parent = sf1
-newfly.MouseButton1Click:Connect(function()
-	floating = not floating
-
-	if floating then
-		-- Start moving up
-		floatConnection = RunService.RenderStepped:Connect(function()
-			if humanoidRootPart then
-				humanoidRootPart.Velocity = Vector3.new(0, 50, 0) -- Constant upward force
-			end
-		end)
-		newfly.Text = "Stop Flying"
-	else
-		-- Stop moving up
-		if floatConnection then
-			floatConnection:Disconnect()
-			floatConnection = nil
-		end
-		if humanoidRootPart then
-			humanoidRootPart.Velocity = Vector3.new(0, 0, 0)
-		end
-		newfly.Text = "Start Flying"
-	end
-end)
-
 
 
 local esp = Instance.new("TextButton")
