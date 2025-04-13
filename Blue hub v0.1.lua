@@ -579,13 +579,6 @@ newfly.BackgroundTransparency = 0
 newfly.TextColor3 = Color3.new(255, 255, 255)
 newfly.Font = Enum.Font.Code
 newfly.Parent = sf1
-local player = Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-
-local floating = false
-local floatConnection
-
 newfly.MouseButton1Click:Connect(function()
 	floating = not floating
 
