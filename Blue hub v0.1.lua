@@ -564,81 +564,9 @@ vfly.BackgroundTransparency = 0
 vfly.TextColor3 = Color3.new(255, 255, 255)
 vfly.Font = Enum.Font.Code
 vfly.Parent = sf1
-local vfly = script.Parent
-local player = game.Players.LocalPlayer
-local RunService = game:GetService("RunService")
-
-local flying = false
-local checkLoop = nil
-local bodyVelocity = nil
-
--- Function to detect if player is riding a VehicleSeat
-local function getSeatedVehicle()
-	local character = player.Character
-	if not character then return nil end
-
-	local humanoid = character:FindFirstChildOfClass("Humanoid")
-	if not humanoid then return nil end
-
-	if humanoid.SeatPart and humanoid.SeatPart:IsA("VehicleSeat") then
-		return humanoid.SeatPart
-	end
-
-	return nil
-end
-
--- Function to make the vehicle fly
-local function makeVehicleFly(seat)
-	local vehicle = seat:FindFirstAncestorWhichIsA("Model")
-	if not vehicle then return end
-
-	local rootPart = vehicle:FindFirstChild("PrimaryPart") or vehicle:FindFirstChild("VehicleSeat")
-	if not rootPart then return end
-
-	bodyVelocity = Instance.new("BodyVelocity")
-	bodyVelocity.MaxForce = Vector3.new(1e5, 1e5, 1e5)
-	bodyVelocity.Velocity = Vector3.new(0, 50, 0) -- Upward force
-	bodyVelocity.P = 1250
-	bodyVelocity.Parent = rootPart
-
-	print("Vehicle flying!")
-end
-
--- Function to remove BodyVelocity if exists
-local function stopVehicleFly()
-	if bodyVelocity then
-		bodyVelocity:Destroy()
-		bodyVelocity = nil
-		print("Vehicle stopped flying.")
-	end
-end
-
--- Main toggle function
-local function onButtonClick()
-	flying = not flying
-
-	if flying then
-		-- Start checking loop
-		checkLoop = RunService.RenderStepped:Connect(function()
-			local seat = getSeatedVehicle()
-			if seat and not bodyVelocity then
-				makeVehicleFly(seat)
-			elseif not seat then
-				stopVehicleFly()
-			end
-		end)
-	else
-		-- Stop checking loop and stop flying
-		if checkLoop then
-			checkLoop:Disconnect()
-			checkLoop = nil
-		end
-		stopVehicleFly()
-	end
-end
-
-vfly.MouseButton1Click:Connect(onButtonClick)
-
+vfly.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ScpGuest666/Random-Roblox-script/refs/heads/main/Roblox%20Fe%20Vehicle%20Fly%20GUI%20script'))()
+end)
 
 local newfly = Instance.new("TextButton")
 newfly.Size = UDim2.new(0.2, 0, 0.1, 0)
