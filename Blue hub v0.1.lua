@@ -429,13 +429,52 @@ speed.BackgroundTransparency = 0
 speed.TextColor3 = Color3.new(255, 255, 255)
 speed.Font = Enum.Font.Code
 speed.Parent = sf1
-speed.MouseButton1Down:connect(function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
-humanoid.WalkSpeed = 60
+speed.MouseButton1Click:Connect(function()
+	tpSpeed = tpSpeed + 5
+	print("TP Speed is now:", tpSpeed)
 end)
+
+-- Movement input
+userInput.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+	if input.KeyCode == Enum.KeyCode.W then
+		moving = true
+	end
+end)
+
+userInput.InputEnded:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.W then
+		moving = false
+	end
+end)
+
+-- TPWalk Loop
+runService.RenderStepped:Connect(function(dt)
+	if moving and character and hrp then
+		local moveDirection = character.Humanoid.MoveDirection
+		if moveDirection.Magnitude > 0 then
+			hrp.CFrame = hrp.CFrame + moveDirection * tpSpeed * dt
+		end
+	end
+end)
+What It Does:
+Increases tpwalk speed by 5 each time the button is clicked.
+
+Moves the character forward manually based on MoveDirection and current tpSpeed.
+
+Uses RenderStepped for smooth teleport-like movement.
+
+Let me know if you want it to work with mobile touch controls or add side/back directions!
+
+
+
+
+
+
+
+
+
+
 
 local jump = Instance.new("TextButton")
 jump.Size = UDim2.new(0.2, 0, 0.1, 0)
