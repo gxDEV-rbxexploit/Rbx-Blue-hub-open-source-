@@ -434,32 +434,6 @@ speed.MouseButton1Click:Connect(function()
 	print("TP Speed is now:", tpSpeed)
 end)
 
--- Movement input
-userInput.InputBegan:Connect(function(input, gameProcessed)
-	if gameProcessed then return end
-	if input.KeyCode == Enum.KeyCode.W then
-		moving = true
-	end
-end)
-
-userInput.InputEnded:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.W then
-		moving = false
-	end
-end)
-
--- TPWalk Loop
-runService.RenderStepped:Connect(function(dt)
-	if moving and character and hrp then
-		local moveDirection = character.Humanoid.MoveDirection
-		if moveDirection.Magnitude > 0 then
-			hrp.CFrame = hrp.CFrame + moveDirection * tpSpeed * dt
-		end
-	end
-end)
-
-
-
 
 local jump = Instance.new("TextButton")
 jump.Size = UDim2.new(0.2, 0, 0.1, 0)
