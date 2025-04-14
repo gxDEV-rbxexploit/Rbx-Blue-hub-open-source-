@@ -304,68 +304,7 @@ aim.TextColor3 = Color3.new(255, 255, 255)
 aim.Font = Enum.Font.Code
 aim.Parent = sf
 aim.MouseButton1Down:connect(function()
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local Camera = workspace.CurrentCamera
-local LocalPlayer = Players.LocalPlayer
-local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
-
--- Settings
-local AIM_ASSIST_STRENGTH = 10
-
--- GUI-based FOV setup
-local fovFrame = PlayerGui:WaitForChild("AimAssistGUI"):WaitForChild("FOVCircle")
-
-local function getFOVCenter()
-	return fovFrame.AbsolutePosition + (fovFrame.AbsoluteSize / 2)
-end
-
-local function getFOVRadius()
-	return fovFrame.AbsoluteSize.X / 2 -- X and Y are same since it's a circle
-end
-
--- Get torso (R15 or R6 compatible)
-local function getTorso(character)
-	return character:FindFirstChild("UpperTorso") or character:FindFirstChild("Torso")
-end
-
--- Get closest target in FOV
-local function getClosestTarget()
-	local closestPlayer = nil
-	local shortestDistance = getFOVRadius()
-
-	for _, player in ipairs(Players:GetPlayers()) do
-		if player ~= LocalPlayer and player.Character then
-			local torso = getTorso(player.Character)
-			if torso then
-				local screenPoint, onScreen = Camera:WorldToViewportPoint(torso.Position)
-				if onScreen then
-					local dist = (Vector2.new(screenPoint.X, screenPoint.Y) - getFOVCenter()).Magnitude
-					if dist < shortestDistance then
-						shortestDistance = dist
-						closestPlayer = player
-					end
-				end
-			end
-		end
-	end
-
-	return closestPlayer
-end
-
--- Aim assist loop
-RunService.RenderStepped:Connect(function()
-	local target = getClosestTarget()
-	if target and target.Character then
-		local torso = getTorso(target.Character)
-		if torso then
-			local direction = (torso.Position - Camera.CFrame.Position).Unit
-			local currentLook = Camera.CFrame.LookVector
-			local newLook = currentLook:Lerp(direction, AIM_ASSIST_STRENGTH)
-			Camera.CFrame = CFrame.new(Camera.CFrame.Position, Camera.CFrame.Position + newLook)
-		end
-	end
-end)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Qrto1/aimbot/main/fov"))()
 end)
 
 local spin = Instance.new("TextButton")
@@ -657,6 +596,21 @@ fps.Font = Enum.Font.Code
 fps.Parent = sf2
 fps.MouseButton1Down:connect(function()
 loadstring(game:HttpGet("https://pastebin.com/raw/ySHJdZpb",true))()
+end)
+
+local fpsu = Instance.new("TextButton")
+fpsu.Size = UDim2.new(0.2, 0, 0.1, 0)
+fpsu.Position = UDim2.new(0.50, 0, 0.13, 0)
+fpsu.BackgroundColor3 = Color3.new(0, 0, 0)
+fpsu.BorderColor3 = Color3.new(0, 0, 1)
+fpsu.BorderSizePixel = 1
+fpsu.Text = "FPS booster"
+fpsu.BackgroundTransparency = 0 
+fpsu.TextColor3 = Color3.new(255, 255, 255)
+fpsu.Font = Enum.Font.Code
+fpsu.Parent = sf2
+fpsu.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/qcqBuz16"))()
 end)
 
 
