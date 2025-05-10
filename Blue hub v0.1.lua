@@ -595,7 +595,7 @@ fps.TextColor3 = Color3.new(255, 255, 255)
 fps.Font = Enum.Font.Code
 fps.Parent = sf2
 fps.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://pastebin.com/raw/ySHJdZpb",true))()
+loadstring(game:HttpGet("https://pastebin.com/raw/ayWQisM5",true))()
 end)
 
 local fpsu = Instance.new("TextButton")
