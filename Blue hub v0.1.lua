@@ -323,7 +323,7 @@ end)
 
 local spin = Instance.new("TextButton")
 spin.Size = UDim2.new(0.2, 0, 0.1, 0)
-spin.Position = UDim2.new(0.255, 0, 0.13, 0)
+spin.Position = UDim2.new(0.25, 0, 0.13, 0)
 spin.BackgroundColor3 = Color3.new(0, 0, 0)
 spin.BorderColor3 = Color3.new(0, 0, 1)
 spin.BorderSizePixel = 1
@@ -355,19 +355,19 @@ end)
 
 end)
 
-local hit = Instance.new("TextButton")
-hit.Size = UDim2.new(0.2, 0, 0.1, 0)
-hit.Position = UDim2.new(0.00, 0, 0.00, 0)
-hit.BackgroundColor3 = Color3.new(0, 0, 0)
-hit.BorderColor3 = Color3.new(0, 0, 1)
-hit.BorderSizePixel = 1
-hit.Text = "hitbox small"
-hit.BackgroundTransparency = 0 
-hit.TextColor3 = Color3.new(255, 255, 255)
-hit.Font = Enum.Font.Code
-hit.Parent = sf
-hit.MouseButton1Down:connect(function()
-
+local hitv = Instance.new("TextButton")
+hitv.Size = UDim2.new(0.2, 0, 0.1, 0)
+hitv.Position = UDim2.new(0.50, 0, 0.13, 0)
+hitv.BackgroundColor3 = Color3.new(0, 0, 0)
+hitv.BorderColor3 = Color3.new(0, 0, 1)
+hitv.BorderSizePixel = 1
+hitv.Text = "hitbox changer"
+hitv.BackgroundTransparency = 0 
+hitv.TextColor3 = Color3.new(255, 255, 255)
+hitv.Font = Enum.Font.Code
+hitv.Parent = sf
+hitv.MouseButton1Down:connect(function()
+print("wip")
 end)
 
 local fly = Instance.new("TextButton")
