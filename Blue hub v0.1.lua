@@ -367,7 +367,7 @@ hitv.TextColor3 = Color3.new(255, 255, 255)
 hitv.Font = Enum.Font.Code
 hitv.Parent = sf
 hitv.MouseButton1Down:connect(function()
-print("wip")
+loadstring(game:HttpGet("https://pastebin.com/raw/P8DLAKb2"))()
 end)
 
 local fly = Instance.new("TextButton")
