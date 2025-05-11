@@ -634,6 +634,7 @@ crb.BackgroundTransparency = 0
 crb.TextColor3 = Color3.new(255, 255, 255)
 crb.Font = Enum.Font.Code
 crb.Parent = f2
+crb.TextSize = 16
 crb.MouseButton1Click:Connect(function()
 	sf.Visible = false 
 	sf1.Visible = false
@@ -642,7 +643,7 @@ crb.MouseButton1Click:Connect(function()
 end)
 
 local hname = Instance.new("TextLabel")
-hname.Size = UDim2.new(0.3, 0, 0.05, 0)
+hname.Size = UDim2.new(1, 0, 0.05, 0)
 hname.Position = UDim2.new(0, 0, 0, 0)
 hname.BackgroundColor3 = Color3.new(0, 0, 0)
 hname.BorderColor3 = Color3.new(0, 0, 1)
@@ -655,7 +656,7 @@ hname.Parent = crd
 
 
 local own = Instance.new("TextLabel")
-own.Size = UDim2.new(0.3, 0, 0.05, 0)
+own.Size = UDim2.new(1, 0, 0.05, 0)
 own.Position = UDim2.new(0, 0, 0.05, 0)
 own.BackgroundColor3 = Color3.new(0, 0, 0)
 own.BorderColor3 = Color3.new(0, 0, 1)
@@ -668,7 +669,7 @@ own.Parent = crd
 
 
 local own1 = Instance.new("TextLabel")
-own1.Size = UDim2.new(0.5, 0, 0.05, 0)
+own1.Size = UDim2.new(1, 0, 0.05, 0)
 own1.Position = UDim2.new(0, 0, 0.1, 0)
 own1.BackgroundColor3 = Color3.new(0, 0, 0)
 own1.BorderColor3 = Color3.new(0, 0, 1)
