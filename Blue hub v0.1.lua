@@ -355,6 +355,20 @@ end)
 
 end)
 
+local hit = Instance.new("TextButton")
+hit.Size = UDim2.new(0.2, 0, 0.1, 0)
+hit.Position = UDim2.new(0.00, 0, 0.00, 0)
+hit.BackgroundColor3 = Color3.new(0, 0, 0)
+hit.BorderColor3 = Color3.new(0, 0, 1)
+hit.BorderSizePixel = 1
+hit.Text = "hitbox small"
+hit.BackgroundTransparency = 0 
+hit.TextColor3 = Color3.new(255, 255, 255)
+hit.Font = Enum.Font.Code
+hit.Parent = sf
+hit.MouseButton1Down:connect(function()
+
+end)
 
 local fly = Instance.new("TextButton")
 fly.Size = UDim2.new(0.2, 0, 0.1, 0)
