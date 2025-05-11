@@ -97,6 +97,7 @@ op.BackgroundTransparency = 0
 op.TextColor3 = Color3.new(0, 0, 1)
 op.Font = Enum.Font.Code
 op.Parent = gui
+op.TextSize = 13
 op.MouseButton1Click:Connect(function()
 	if f.Visible == false then
 		f.Visible = true
@@ -116,7 +117,7 @@ name.BackgroundTransparency = 0
 name.TextColor3 = Color3.new(255, 255, 255)
 name.Font = Enum.Font.Code
 name.Parent = f1
-
+name.TextSize = 16
 
 local hub1 = Instance.new("TextButton")
 hub1.Size = UDim2.new(0.8, 0, 0.1, 0)
