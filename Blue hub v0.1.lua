@@ -42,8 +42,8 @@ f2.Parent = f
 
 
 local sf = Instance.new("ScrollingFrame")
-sf.Size = UDim2.new(0.7, 0, 1, 0)
-sf.Position = UDim2.new(0.3, 0, 0, 0)
+sf.Size = UDim2.new(0.7, 0, 0.95, 0)
+sf.Position = UDim2.new(0.3, 0, 0.05, 0)
 sf.BackgroundColor3 = Color3.new(0, 0, 0)
 sf.BorderColor3 = Color3.new(0, 0, 1)
 sf.BorderSizePixel = 0
@@ -52,8 +52,8 @@ sf.BackgroundTransparency = 1
 
 
 local sf1 = Instance.new("ScrollingFrame")
-sf1.Size = UDim2.new(0.7, 0, 1, 0)
-sf1.Position = UDim2.new(0.3, 0, 0, 0)
+sf1.Size = UDim2.new(0.7, 0, 0.95, 0)
+sf1.Position = UDim2.new(0.3, 0, 0.05, 0)
 sf1.BackgroundColor3 = Color3.new(0, 0, 0)
 sf1.BorderColor3 = Color3.new(0, 0, 1)
 sf1.BorderSizePixel = 0
@@ -62,8 +62,8 @@ sf1.BackgroundTransparency = 1
 
 
 local sf2 = Instance.new("ScrollingFrame")
-sf2.Size = UDim2.new(0.7, 0, 1, 0)
-sf2.Position = UDim2.new(0.3, 0, 0, 0)
+sf2.Size = UDim2.new(0.7, 0, 0.95, 0)
+sf2.Position = UDim2.new(0.3, 0, 0.05, 0)
 sf2.BackgroundColor3 = Color3.new(0, 0, 0)
 sf2.BorderColor3 = Color3.new(0, 0, 1)
 sf2.BorderSizePixel = 0
@@ -71,8 +71,8 @@ sf2.Parent = f
 sf2.BackgroundTransparency = 1
 
 local crd = Instance.new("Frame")
-crd.Size = UDim2.new(0.7, 0, 1, 0)
-crd.Position = UDim2.new(0.3, 0, 0, 0)
+crd.Size = UDim2.new(0.7, 0, 0.95, 0)
+crd.Position = UDim2.new(0.3, 0, 0.05, 0)
 crd.BackgroundColor3 = Color3.new(0, 0, 0)
 crd.BorderColor3 = Color3.new(0, 0, 1)
 crd.BorderSizePixel = 0
@@ -116,7 +116,7 @@ name.Text = "Blue HUB"
 name.BackgroundTransparency = 0 
 name.TextColor3 = Color3.new(255, 255, 255)
 name.Font = Enum.Font.Code
-name.Parent = f1
+name.Parent = f
 name.TextSize = 16
 
 local hub1 = Instance.new("TextButton")
