@@ -8,25 +8,35 @@ gui.Parent = game.CoreGui
 -- put your mainframe into the screengui that I have made (frame.Parent = gui) 
 
 local f = Instance.new("Frame")
-f.Size = UDim2.new(0.6, 0, 0.9, 0)
-f.Position = UDim2.new(0.12, 0, 0.0, 0)
+f.Size = UDim2.new(0.6, 0, 0.75, 0)
+f.Position = UDim2.new(0.2, 0, 0.1, 0)
 f.BackgroundColor3 = Color3.new(0, 0, 0)
-f.BorderColor3 = Color3.new(0, 0, 1)
-f.BorderSizePixel = 1
+f.BorderColor3 = Color3.new(0, 0, 0)
+f.BorderSizePixel = 0
 f.Active = true
-f.BackgroundTransparency = 0 
-f.Draggable = false
+f.BackgroundTransparency = 0.6
+f.Draggable = true
 f.Parent = gui
 
 
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = f
+
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Color = Color3.new(0, 0, 1)
+UIStroke.Thickness = 2
+UIStroke.Parent = f
+
 local f2 = Instance.new("Frame")
-f2.Size = UDim2.new(0.3, 0, 1, 0)
-f2.Position = UDim2.new(0.0, 0, 0, 0)
+f2.Size = UDim2.new(0.3, 0, 0.05, 0)
+f2.Position = UDim2.new(0.0, 0, 0.05, 0)
 f2.BackgroundColor3 = Color3.new(0, 0, 0)
 f2.BorderColor3 = Color3.new(0, 0, 1)
-f2.BorderSizePixel = 1
+f2.BorderSizePixel = 0
 f2.Active = true
-f2.BackgroundTransparency = 0 
+f2.BackgroundTransparency = 1 
 f2.Draggable = false
 f2.Parent = f
 
@@ -36,9 +46,9 @@ sf.Size = UDim2.new(0.7, 0, 1, 0)
 sf.Position = UDim2.new(0.3, 0, 0, 0)
 sf.BackgroundColor3 = Color3.new(0, 0, 0)
 sf.BorderColor3 = Color3.new(0, 0, 1)
-sf.BorderSizePixel = 1
+sf.BorderSizePixel = 0
 sf.Parent = f
-sf.BackgroundTransparency = 0 
+sf.BackgroundTransparency = 1 
 
 
 local sf1 = Instance.new("ScrollingFrame")
@@ -46,9 +56,9 @@ sf1.Size = UDim2.new(0.7, 0, 1, 0)
 sf1.Position = UDim2.new(0.3, 0, 0, 0)
 sf1.BackgroundColor3 = Color3.new(0, 0, 0)
 sf1.BorderColor3 = Color3.new(0, 0, 1)
-sf1.BorderSizePixel = 1
+sf1.BorderSizePixel = 0
 sf1.Parent = f
-sf1.BackgroundTransparency = 0 
+sf1.BackgroundTransparency = 1
 
 
 local sf2 = Instance.new("ScrollingFrame")
@@ -56,18 +66,18 @@ sf2.Size = UDim2.new(0.7, 0, 1, 0)
 sf2.Position = UDim2.new(0.3, 0, 0, 0)
 sf2.BackgroundColor3 = Color3.new(0, 0, 0)
 sf2.BorderColor3 = Color3.new(0, 0, 1)
-sf2.BorderSizePixel = 1
+sf2.BorderSizePixel = 0
 sf2.Parent = f
-sf2.BackgroundTransparency = 0 
+sf2.BackgroundTransparency = 1
 
 local crd = Instance.new("Frame")
 crd.Size = UDim2.new(0.7, 0, 1, 0)
 crd.Position = UDim2.new(0.3, 0, 0, 0)
 crd.BackgroundColor3 = Color3.new(0, 0, 0)
 crd.BorderColor3 = Color3.new(0, 0, 1)
-crd.BorderSizePixel = 1
+crd.BorderSizePixel = 0
 crd.Active = true
-crd.BackgroundTransparency = 0 
+crd.BackgroundTransparency = 1
 crd.Draggable = false
 crd.Parent = f
 
@@ -96,8 +106,8 @@ op.MouseButton1Click:Connect(function()
 end)
 
 local name = Instance.new("TextLabel")
-name.Size = UDim2.new(1, 0, 0.1, 0)
-name.Position = UDim2.new(0.0, 0, 0.0, 0)
+name.Size = UDim2.new(1, 0, 0.05, 0)
+name.Position = UDim2.new(0.0, 0, 0, 0)
 name.BackgroundColor3 = Color3.new(0, 0, 0)
 name.BorderColor3 = Color3.new(0, 0, 1)
 name.BorderSizePixel = 1
@@ -105,7 +115,7 @@ name.Text = "Blue HUB"
 name.BackgroundTransparency = 0 
 name.TextColor3 = Color3.new(255, 255, 255)
 name.Font = Enum.Font.Code
-name.Parent = f2
+name.Parent = f1
 
 
 local hub1 = Instance.new("TextButton")
@@ -113,12 +123,13 @@ hub1.Size = UDim2.new(0.8, 0, 0.1, 0)
 hub1.Position = UDim2.new(0.1, 0, 0.2, 0)
 hub1.BackgroundColor3 = Color3.new(0, 0, 0)
 hub1.BorderColor3 = Color3.new(0, 0, 1)
-hub1.BorderSizePixel = 1
+hub1.BorderSizePixel = 0
 hub1.Text = "Combat"
-hub1.BackgroundTransparency = 0 
+hub1.BackgroundTransparency = 1 
 hub1.TextColor3 = Color3.new(255, 255, 255)
 hub1.Font = Enum.Font.Code
 hub1.Parent = f2
+hub1.TextSize = 16
 hub1.MouseButton1Click:Connect(function()
 	sf.Visible = true
 	sf2.Visible = false
@@ -137,6 +148,7 @@ hub1n.BackgroundTransparency = 0
 hub1n.TextColor3 = Color3.new(255, 255, 255)
 hub1n.Font = Enum.Font.Code
 hub1n.Parent = f2
+hub1n.TextSize = 16
 hub1n.MouseButton1Click:Connect(function()
 	sf.Visible = false 
 	sf1.Visible = true
@@ -155,6 +167,7 @@ hub2.BackgroundTransparency = 0
 hub2.TextColor3 = Color3.new(255, 255, 255)
 hub2.Font = Enum.Font.Code
 hub2.Parent = f2
+hub2.TextSize = 16
 hub2.MouseButton1Click:Connect(function()
 	sf.Visible = false 
 	sf1.Visible = false
