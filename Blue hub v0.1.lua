@@ -1,6 +1,12 @@
+
 local gui = Instance.new("ScreenGui")
 gui.Name = "catcherloaderVfive"
 gui.Parent = game.CoreGui
+
+---lolllllll!---
+
+
+
 
 local f = Instance.new("Frame")
 f.Size = UDim2.new(0.6, 0, 0.75, 0)
