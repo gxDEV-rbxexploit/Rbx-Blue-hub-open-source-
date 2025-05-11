@@ -30,7 +30,7 @@ UIStroke.Thickness = 2
 UIStroke.Parent = f
 
 local f2 = Instance.new("Frame")
-f2.Size = UDim2.new(0.3, 0, 0.05, 0)
+f2.Size = UDim2.new(0.3, 0, 0.95, 0)
 f2.Position = UDim2.new(0.0, 0, 0.05, 0)
 f2.BackgroundColor3 = Color3.new(0, 0, 0)
 f2.BorderColor3 = Color3.new(0, 0, 1)
