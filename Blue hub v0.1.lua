@@ -371,6 +371,25 @@ hitv.MouseButton1Down:connect(function()
 loadstring(game:HttpGet("https://pastebin.com/raw/P8DLAKb2"))()
 end)
 
+local op2 = Instance.new("TextButton")
+op2.Size = UDim2.new(0.2, 0, 0.1, 0)
+op2.Position = UDim2.new(0.75, 0, 0.13, 0)
+op2.BackgroundColor3 = Color3.new(0, 0, 0)
+op2.BorderColor3 = Color3.new(0, 0, 1)
+op2.BorderSizePixel = 1
+op2.Text = "kill message"
+op2.BackgroundTransparency = 0 
+op2.TextColor3 = Color3.new(255, 255, 255)
+op2.Font = Enum.Font.Code
+op2.Parent = sf
+op2.MouseButton1Down:connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Player%20Death%20Notification'))()
+end)
+
+
+
+
+
 local fly = Instance.new("TextButton")
 fly.Size = UDim2.new(0.2, 0, 0.1, 0)
 fly.Position = UDim2.new(0, 0, 0.0, 0)
