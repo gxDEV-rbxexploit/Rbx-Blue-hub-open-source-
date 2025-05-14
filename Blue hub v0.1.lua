@@ -5,7 +5,7 @@ gui.Parent = game.CoreGui
 
 ---lolllllll!---
 
-
+---why are you looking at the source code?---
 
 
 local f = Instance.new("Frame")
@@ -93,7 +93,7 @@ op.Position = UDim2.new(0.91, 0, 0, 0)
 op.BackgroundColor3 = Color3.new(0, 0, 0)
 op.BorderColor3 = Color3.new(0, 0, 1)
 op.BorderSizePixel = 1
-op.Text = "Blue hub"
+op.Text = "🗿"
 op.BackgroundTransparency = 0 
 op.TextColor3 = Color3.new(0, 0, 1)
 op.Font = Enum.Font.Code
