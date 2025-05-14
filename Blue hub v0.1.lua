@@ -494,6 +494,9 @@ end
 noclip() -- to toggle noclip() and clip()
 end)
 
+---stop looking at the source code ---
+
+
 local swim = Instance.new("TextButton")
 swim.Size = UDim2.new(0.2, 0, 0.1, 0)
 swim.Position = UDim2.new(0.25, 0, 0.13, 0)
@@ -713,6 +716,8 @@ own1.BackgroundTransparency = 0
 own1.TextColor3 = Color3.new(255, 255, 255)
 own1.Font = Enum.Font.Code
 own1.Parent = crd
+
+--- please stop!!!! ---
 
 
 game.StarterGui:SetCore("SendNotification",  {
