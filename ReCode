@@ -231,6 +231,25 @@ jump.TextColor3 = Color3.new(255, 255, 255)
 jump.Font = Enum.Font.Code
 jump.Parent = sf1
 
+
+
+local fly = Instance.new("TextButton")
+fly.Size = UDim2.new(1, 0, 0.05, 0)
+fly.Position = UDim2.new(0, 0, 0.0, 0)
+fly.BackgroundColor3 = Color3.new(0, 0, 0)
+fly.BorderColor3 = Color3.new(0, 0, 1)
+fly.BorderSizePixel = 1
+fly.Text = "fly"
+fly.BackgroundTransparency = 0 
+fly.TextColor3 = Color3.new(255, 255, 255)
+fly.Font = Enum.Font.Code
+fly.Parent = sf1
+fly.MouseButton1Down:connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/JNHHGaming/Fly/refs/heads/main/Fly'))()
+end)
+
+
+
 local infjump = Instance.new("TextButton")
 infjump.Size = UDim2.new(1, 0, 0.05, 0)
 infjump.Position = UDim2.new(0, 0, 0.13, 0)
