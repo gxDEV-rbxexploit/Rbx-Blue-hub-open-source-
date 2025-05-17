@@ -1,0 +1,260 @@
+local gui = Instance.new("ScreenGui")
+gui.Name = "patrickGui"
+gui.Parent = game.CoreGui
+
+--///patrick gui maker///--
+
+
+-- put your mainframe into the screengui that I have made (frame.Parent = gui) 
+
+local main = Instance.new("Frame")
+main.Size = UDim2.new(1, 0, 1, 0)
+main.Position = UDim2.new(0, 0, 0, 0)
+main.BackgroundColor3 = Color3.new(0, 0, 0)
+main.BorderColor3 = Color3.new(0, 0, 0)
+main.BorderSizePixel = 0
+main.Active = true
+main.BackgroundTransparency = 0.6
+main.Draggable = false
+main.Parent = gui
+
+
+
+
+
+local f = Instance.new("Frame")
+f.Size = UDim2.new(0.15, 0, 0.9, 0)
+f.Position = UDim2.new(0.05, 0, 0, 0)
+f.BackgroundColor3 = Color3.new(0, 0, 0)
+f.BorderColor3 = Color3.new(0, 0, 1)
+f.BorderSizePixel = 1
+f.Active = true
+f.BackgroundTransparency = 0 
+f.Draggable = true
+f.Parent = gui
+main.Visible = false
+
+
+
+local f1 = Instance.new("Frame")
+f1.Size = UDim2.new(0.15, 0, 0.9, 0)
+f1.Position = UDim2.new(0.25, 0, 0, 0)
+f1.BackgroundColor3 = Color3.new(0, 0, 0)
+f1.BorderColor3 = Color3.new(0, 0, 1)
+f1.BorderSizePixel = 1
+f1.Active = true
+f1.BackgroundTransparency = 0 
+f1.Draggable = true
+f1.Parent = gui
+
+
+local name = Instance.new("TextLabel")
+name.Size = UDim2.new(1, 0, 0.05, 0)
+name.Position = UDim2.new(0, 0, 0, 0)
+name.BackgroundColor3 = Color3.new(0, 0, 0)
+name.BorderColor3 = Color3.new(0, 0, 1)
+name.BorderSizePixel = 1
+name.Text = "Combat"
+name.BackgroundTransparency = 0
+name.TextColor3 = Color3.new(255, 255, 255)
+name.Font = Enum.Font.Code
+name.Parent = f
+name.TextSize = 16
+
+local sf = Instance.new("ScrollingFrame")
+sf.Size = UDim2.new(1, 0, 0.95, 0)
+sf.Position = UDim2.new(0, 0, 0.06, 0)
+sf.BackgroundColor3 = Color3.new(1, 1, 1)
+sf.BorderColor3 = Color3.new(0, 0, 0)
+sf.BorderSizePixel = 0
+sf.Parent = f
+sf.BackgroundTransparency = 1
+sf.ScrollBarThickness = 0
+
+local lidt = Instance.new("UIListLayout")
+lidt.HorizontalAlignment = Enum.HorizontalAlignment.Center
+lidt.SortOrder = Enum.SortOrder.LayoutOrder
+lidt.Padding = UDim.new(0, 3)
+lidt.Parent = sf
+
+
+
+local hit = Instance.new("TextButton")
+hit.Size = UDim2.new(1, 0, 0.05, 0)
+hit.Position = UDim2.new(0.5, 0, 0.05, 0)
+hit.BackgroundColor3 = Color3.new(0, 0, 0)
+hit.BorderColor3 = Color3.new(0, 0, 1)
+hit.BorderSizePixel = 1
+hit.Text = "Hitbox"
+hit.BackgroundTransparency = 0 
+hit.TextColor3 = Color3.new(255, 255, 255)
+hit.Font = Enum.Font.Code
+hit.Parent = sf
+
+
+local spin = Instance.new("TextButton")
+spin.Size = UDim2.new(1, 0, 0.05, 0)
+spin.Position = UDim2.new(0.5, 0, 0.5, 0)
+spin.BackgroundColor3 = Color3.new(0, 0, 0)
+spin.BorderColor3 = Color3.new(0, 0, 1)
+spin.BorderSizePixel = 1
+spin.Text = "Spinbot"
+spin.BackgroundTransparency = 0 
+spin.TextColor3 = Color3.new(255, 255, 255)
+spin.Font = Enum.Font.Code
+spin.Parent = sf
+
+
+local tp = Instance.new("TextButton")
+tp.Size = UDim2.new(1, 0, 0.05, 0)
+tp.Position = UDim2.new(0.5, 0, 0.5, 0)
+tp.BackgroundColor3 = Color3.new(0, 0, 0)
+tp.BorderColor3 = Color3.new(0, 0, 1)
+tp.BorderSizePixel = 1
+tp.Text = "TP aura"
+tp.BackgroundTransparency = 0 
+tp.TextColor3 = Color3.new(255, 255, 255)
+tp.Font = Enum.Font.Code
+tp.Parent = sf
+
+
+local km = Instance.new("TextButton")
+km.Size = UDim2.new(1, 0, 0.05, 0)
+km.Position = UDim2.new(0.5, 0, 0.5, 0)
+km.BackgroundColor3 = Color3.new(0, 0, 0)
+km.BorderColor3 = Color3.new(0, 0, 1)
+km.BorderSizePixel = 1
+km.Text = "kill message"
+km.BackgroundTransparency = 0 
+km.TextColor3 = Color3.new(255, 255, 255)
+km.Font = Enum.Font.Code
+km.Parent = sf
+
+
+local open = Instance.new("TextButton")
+open.Size = UDim2.new(0.03, 0, 0.09, 0)
+open.Position = UDim2.new(0.95, 0, -0.1, 0)
+open.BackgroundColor3 = Color3.new(0, 0, 0)
+open.BorderColor3 = Color3.new(0, 0, 1)
+open.BorderSizePixel = 1
+open.Text = "🔵"
+open.BackgroundTransparency = 1
+open.TextColor3 = Color3.new(255, 255, 255)
+open.Font = Enum.Font.Code
+open.Parent = gui
+open.TextSize = 40
+
+
+
+local sf1 = Instance.new("ScrollingFrame")
+sf1.Size = UDim2.new(1, 0, 0.95, 0)
+sf1.Position = UDim2.new(0, 0, 0.05, 0)
+sf1.BackgroundColor3 = Color3.new(0, 0, 0)
+sf1.BorderColor3 = Color3.new(0, 0, 1)
+sf1.BorderSizePixel = 1
+sf1.Parent = f1
+sf1.BackgroundTransparency = 0 
+sf1.ScrollBarThickness = 0
+
+
+local lidt1 = Instance.new("UIListLayout")
+lidt1.HorizontalAlignment = Enum.HorizontalAlignment.Center
+lidt1.SortOrder = Enum.SortOrder.LayoutOrder
+lidt1.Padding = UDim.new(0, 3)
+lidt1.Parent = sf1
+
+
+local name1 = Instance.new("TextLabel")
+name1.Size = UDim2.new(1, 0, 0.05, 0)
+name1.Position = UDim2.new(0, 0, 0, 0)
+name1.BackgroundColor3 = Color3.new(0, 0, 0)
+name1.BorderColor3 = Color3.new(0, 0, 1)
+name1.BorderSizePixel = 1
+name1.Text = "Motion"
+name1.BackgroundTransparency = 0 
+name1.TextColor3 = Color3.new(255, 255, 255)
+name1.Font = Enum.Font.Code
+name1.Parent = f1
+name1.TextSize = 16
+
+local speed = Instance.new("TextButton")
+speed.Size = UDim2.new(1, 0, 0.05, 0)
+speed.Position = UDim2.new(0.5, 0, 0.5, 0)
+speed.BackgroundColor3 = Color3.new(0, 0, 0)
+speed.BorderColor3 = Color3.new(0, 0, 1)
+speed.BorderSizePixel = 1
+speed.Text = "Speed"
+speed.BackgroundTransparency = 0 
+speed.TextColor3 = Color3.new(255, 255, 255)
+speed.Font = Enum.Font.Code
+speed.Parent = sf1
+
+
+local jump = Instance.new("TextButton")
+jump.Size = UDim2.new(1, 0, 0.05, 0)
+jump.Position = UDim2.new(0.5, 0, 0.5, 0)
+jump.BackgroundColor3 = Color3.new(0, 0, 0)
+jump.BorderColor3 = Color3.new(0, 0, 1)
+jump.BorderSizePixel = 1
+jump.Text = "Jump"
+jump.BackgroundTransparency = 0 
+jump.TextColor3 = Color3.new(255, 255, 255)
+jump.Font = Enum.Font.Code
+jump.Parent = sf1
+
+
+local f2 = Instance.new("Frame")
+f2.Size = UDim2.new(0.15, 0, 0.9, 0)
+f2.Position = UDim2.new(0.45, 0, 0, 0)
+f2.BackgroundColor3 = Color3.new(0, 0, 0)
+f2.BorderColor3 = Color3.new(0, 0, 1)
+f2.BorderSizePixel = 1
+f2.Active = true
+f2.BackgroundTransparency = 0 
+f2.Draggable = true
+f2.Parent = gui
+
+
+local name2 = Instance.new("TextLabel")
+name2.Size = UDim2.new(1, 0, 0.05, 0)
+name2.Position = UDim2.new(0.0, 0, 0, 0)
+name2.BackgroundColor3 = Color3.new(0, 0, 0)
+name2.BorderColor3 = Color3.new(0, 0, 1)
+name2.BorderSizePixel = 1
+name2.Text = "Visual"
+name2.BackgroundTransparency = 0 
+name2.TextColor3 = Color3.new(255, 255, 255)
+name2.Font = Enum.Font.Code
+name2.Parent = f2
+name2.TextSize = 16
+
+local sf2 = Instance.new("ScrollingFrame")
+sf2.Size = UDim2.new(1, 0, 0.95, 0)
+sf2.Position = UDim2.new(0, 0, 0.05, 0)
+sf2.BackgroundColor3 = Color3.new(0, 0, 0)
+sf2.BorderColor3 = Color3.new(0, 0, 1)
+sf2.BorderSizePixel = 1
+sf2.Parent = f2
+sf2.BackgroundTransparency = 0 
+sf2.ScrollBarThickness = 0
+
+local lidt2 = Instance.new("UIListLayout")
+lidt2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+lidt2.SortOrder = Enum.SortOrder.LayoutOrder
+lidt2.Padding = UDim.new(0, 3)
+lidt2.Parent = sf2
+
+
+local fb = Instance.new("TextButton")
+fb.Size = UDim2.new(1, 0, 0.05, 0)
+fb.Position = UDim2.new(0.5, 0, 0.5, 0)
+fb.BackgroundColor3 = Color3.new(0, 0, 0)
+fb.BorderColor3 = Color3.new(0, 0, 1)
+fb.BorderSizePixel = 1
+fb.Text = "Fullbright"
+fb.BackgroundTransparency = 0 
+fb.TextColor3 = Color3.new(255, 255, 255)
+fb.Font = Enum.Font.Code
+fb.Parent = sf2
+
+
