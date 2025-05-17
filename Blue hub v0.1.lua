@@ -721,7 +721,7 @@ own1.Parent = crd
 
 
 game.StarterGui:SetCore("SendNotification",  {
- Title = "Blue HUB";
- Text = "Made by TG@Red01ma.  support me on Telegram";
+ Title = "Warning";
+ Text = "This script is now outdated. DM me for new script";
  Duration = 30;
 })
