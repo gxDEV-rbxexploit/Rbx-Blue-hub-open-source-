@@ -31,8 +31,8 @@ f.BorderSizePixel = 1
 f.Active = true
 f.BackgroundTransparency = 0 
 f.Draggable = true
-f.Parent = gui
-main.Visible = false
+f.Parent = main
+main.Visible = true
 
 
 
@@ -45,7 +45,7 @@ f1.BorderSizePixel = 1
 f1.Active = true
 f1.BackgroundTransparency = 0 
 f1.Draggable = true
-f1.Parent = gui
+f1.Parent = main
 
 
 local name = Instance.new("TextLabel")
@@ -143,7 +143,13 @@ open.TextColor3 = Color3.new(255, 255, 255)
 open.Font = Enum.Font.Code
 open.Parent = gui
 open.TextSize = 40
-
+open.MouseButton1Click:Connect(function()
+	if main.Visible == false then
+		main.Visible = true
+	else
+		main.Visible = false
+	end
+end)
 
 
 local sf1 = Instance.new("ScrollingFrame")
@@ -212,7 +218,7 @@ f2.BorderSizePixel = 1
 f2.Active = true
 f2.BackgroundTransparency = 0 
 f2.Draggable = true
-f2.Parent = gui
+f2.Parent = main
 
 
 local name2 = Instance.new("TextLabel")
