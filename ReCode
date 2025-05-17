@@ -153,7 +153,9 @@ km.BackgroundTransparency = 0
 km.TextColor3 = Color3.new(255, 255, 255)
 km.Font = Enum.Font.Code
 km.Parent = sf
-
+km.MouseButton1Down:connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Player%20Death%20Notification'))()
+end)
 
 local open = Instance.new("TextButton")
 open.Size = UDim2.new(0.03, 0, 0.09, 0)
