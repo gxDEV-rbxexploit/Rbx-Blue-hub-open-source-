@@ -90,7 +90,9 @@ hit.BackgroundTransparency = 0
 hit.TextColor3 = Color3.new(255, 255, 255)
 hit.Font = Enum.Font.Code
 hit.Parent = sf
-
+hit.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/P8DLAKb2"))()
+end)
 
 local spin = Instance.new("TextButton")
 spin.Size = UDim2.new(1, 0, 0.05, 0)
