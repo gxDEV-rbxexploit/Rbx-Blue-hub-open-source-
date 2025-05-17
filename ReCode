@@ -217,7 +217,9 @@ speed.BackgroundTransparency = 0
 speed.TextColor3 = Color3.new(255, 255, 255)
 speed.Font = Enum.Font.Code
 speed.Parent = sf1
-
+speed.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/H7YqGnR4"))()
+end)
 
 local jump = Instance.new("TextButton")
 jump.Size = UDim2.new(1, 0, 0.05, 0)
