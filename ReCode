@@ -479,3 +479,12 @@ fpsu.Parent = sf2
 fpsu.MouseButton1Down:connect(function()
 loadstring(game:HttpGet("https://pastebin.com/raw/qcqBuz16"))()
 end)
+
+
+
+
+game.StarterGui:SetCore("SendNotification",  {
+ Title = "Blue Hub Recode";
+ Text = "Blue HUB Recode by TG@Red01ma";
+ Duration = 12;
+})
