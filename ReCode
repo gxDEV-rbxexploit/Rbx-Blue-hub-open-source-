@@ -418,3 +418,48 @@ tra.Parent = sf2
 tra.MouseButton1Down:connect(function()
 loadstring(game:HttpGet("https://pastebin.com/raw/nnHbfvGW"))()
 end)
+
+local ping = Instance.new("TextButton")
+ping.Size = UDim2.new(1, 0, 0.05, 0)
+ping.Position = UDim2.new(0, 0, 0.13, 0)
+ping.BackgroundColor3 = Color3.new(0, 0, 0)
+ping.BorderColor3 = Color3.new(0, 0, 1)
+ping.BorderSizePixel = 1
+ping.Text = "Ping counter"
+ping.BackgroundTransparency = 0 
+ping.TextColor3 = Color3.new(255, 255, 255)
+ping.Font = Enum.Font.Code
+ping.Parent = sf2
+ping.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/MvKKJ331",true))()
+end)
+
+local fps = Instance.new("TextButton")
+fps.Size = UDim2.new(1, 0, 0.05, 0)
+fps.Position = UDim2.new(0.25, 0, 0.13, 0)
+fps.BackgroundColor3 = Color3.new(0, 0, 0)
+fps.BorderColor3 = Color3.new(0, 0, 1)
+fps.BorderSizePixel = 1
+fps.Text = "FPS counter"
+fps.BackgroundTransparency = 0 
+fps.TextColor3 = Color3.new(255, 255, 255)
+fps.Font = Enum.Font.Code
+fps.Parent = sf2
+fps.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/ayWQisM5",true))()
+end)
+
+local fpsu = Instance.new("TextButton")
+fpsu.Size = UDim2.new(1, 0, 0.05, 0)
+fpsu.Position = UDim2.new(0.50, 0, 0.13, 0)
+fpsu.BackgroundColor3 = Color3.new(0, 0, 0)
+fpsu.BorderColor3 = Color3.new(0, 0, 1)
+fpsu.BorderSizePixel = 1
+fpsu.Text = "FPS booster"
+fpsu.BackgroundTransparency = 0 
+fpsu.TextColor3 = Color3.new(255, 255, 255)
+fpsu.Font = Enum.Font.Code
+fpsu.Parent = sf2
+fpsu.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/qcqBuz16"))()
+end)
