@@ -103,6 +103,27 @@ spin.BackgroundTransparency = 0
 spin.TextColor3 = Color3.new(255, 255, 255)
 spin.Font = Enum.Font.Code
 spin.Parent = sf
+spin.MouseButton1Down:connect(function()
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+-- Spin speed (radians per frame)
+local spinSpeed = math.rad(60)
+
+-- Function to keep spinning the character
+RunService.RenderStepped:Connect(function()
+	if hrp then
+		-- Keep the current position and modify only the rotation
+		local currentCFrame = hrp.CFrame
+		-- Apply rotation around the Y axis
+		hrp.CFrame = currentCFrame * CFrame.Angles(0, spinSpeed, 0)
+	end
+end)
+end)
 
 
 local tp = Instance.new("TextButton")
@@ -208,6 +229,64 @@ jump.TextColor3 = Color3.new(255, 255, 255)
 jump.Font = Enum.Font.Code
 jump.Parent = sf1
 
+local infjump = Instance.new("TextButton")
+infjump.Size = UDim2.new(1, 0, 0.05, 0)
+infjump.Position = UDim2.new(0, 0, 0.13, 0)
+infjump.BackgroundColor3 = Color3.new(0, 0, 0)
+infjump.BorderColor3 = Color3.new(0, 0, 1)
+infjump.BorderSizePixel = 1
+infjump.Text = "infinite jump"
+infjump.BackgroundTransparency = 0 
+infjump.TextColor3 = Color3.new(255, 255, 255)
+infjump.Font = Enum.Font.Code
+infjump.Parent = sf1
+infjump.MouseButton1Down:connect(function()
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+end)
+
+local noclip = Instance.new("TextButton")
+noclip.Size = UDim2.new(1, 0, 0.05, 0)
+noclip.Position = UDim2.new(0.75, 0, 0, 0)
+noclip.BackgroundColor3 = Color3.new(0, 0, 0)
+noclip.BorderColor3 = Color3.new(0, 0, 1)
+noclip.BorderSizePixel = 1
+noclip.Text = "noclip"
+noclip.BackgroundTransparency = 0 
+noclip.TextColor3 = Color3.new(255, 255, 255)
+noclip.Font = Enum.Font.Code
+noclip.Parent = sf1
+noclip.MouseButton1Down:connect(function()
+local Noclip = nil
+local Clip = nil
+
+function noclip()
+	Clip = false
+	local function Nocl()
+		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+			for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA('BasePart') and v.CanCollide and v.Name ~= floatName then
+					v.CanCollide = false
+				end
+			end
+		end
+		wait(0.21) -- basic optimization
+	end
+	Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
+end
+
+function clip()
+	if Noclip then Noclip:Disconnect() end
+	Clip = true
+end
+
+noclip() -- to toggle noclip() and clip()
+end)
+
 
 local f2 = Instance.new("Frame")
 f2.Size = UDim2.new(0.15, 0, 0.9, 0)
@@ -262,5 +341,54 @@ fb.BackgroundTransparency = 0
 fb.TextColor3 = Color3.new(255, 255, 255)
 fb.Font = Enum.Font.Code
 fb.Parent = sf2
+fb.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/PhJZDu3N"))()
+end)
 
 
+local esp = Instance.new("TextButton")
+esp.Size = UDim2.new(1, 0, 0.05, 0)
+esp.Position = UDim2.new(0, 0, 0.0, 0)
+esp.BackgroundColor3 = Color3.new(0, 0, 0)
+esp.BorderColor3 = Color3.new(0, 0, 1)
+esp.BorderSizePixel = 1
+esp.Text = "Esp"
+esp.BackgroundTransparency = 0 
+esp.TextColor3 = Color3.new(255, 255, 255)
+esp.Font = Enum.Font.Code
+esp.Parent = sf2
+esp.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/v3gAuLhd"))()
+end)
+
+
+
+local cham = Instance.new("TextButton")
+cham.Size = UDim2.new(1, 0, 0.05, 0)
+cham.Position = UDim2.new(0.50, 0, 0, 0)
+cham.BackgroundColor3 = Color3.new(0, 0, 0)
+cham.BorderColor3 = Color3.new(0, 0, 1)
+cham.BorderSizePixel = 1
+cham.Text = "chams"
+cham.BackgroundTransparency = 0 
+cham.TextColor3 = Color3.new(255, 255, 255)
+cham.Font = Enum.Font.Code
+cham.Parent = sf2
+cham.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/U2pQ4nCC"))()
+end)
+
+local tra = Instance.new("TextButton")
+tra.Size = UDim2.new(1, 0, 0.05, 0)
+tra.Position = UDim2.new(0.75, 0, 0, 0)
+tra.BackgroundColor3 = Color3.new(0, 0, 0)
+tra.BorderColor3 = Color3.new(0, 0, 1)
+tra.BorderSizePixel = 1
+tra.Text = "tracers"
+tra.BackgroundTransparency = 0 
+tra.TextColor3 = Color3.new(255, 255, 255)
+tra.Font = Enum.Font.Code
+tra.Parent = sf2
+tra.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/nnHbfvGW"))()
+end)
