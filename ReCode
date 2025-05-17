@@ -233,7 +233,9 @@ jump.BackgroundTransparency = 0
 jump.TextColor3 = Color3.new(255, 255, 255)
 jump.Font = Enum.Font.Code
 jump.Parent = sf1
-
+jump.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/xRdqvqvJ"))()
+end)
 
 
 local fly = Instance.new("TextButton")
