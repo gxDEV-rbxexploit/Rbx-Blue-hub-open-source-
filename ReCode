@@ -135,12 +135,14 @@ tp.Position = UDim2.new(0.5, 0, 0.5, 0)
 tp.BackgroundColor3 = Color3.new(0, 0, 0)
 tp.BorderColor3 = Color3.new(0, 0, 1)
 tp.BorderSizePixel = 1
-tp.Text = "TP aura(soon)"
+tp.Text = "swim fly press 'E' to toggle"
 tp.BackgroundTransparency = 0 
 tp.TextColor3 = Color3.new(255, 255, 255)
 tp.Font = Enum.Font.Code
-tp.Parent = sf
-
+tp.Parent = sf1
+tp.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/LLnAYYMC"))()
+end)
 
 local km = Instance.new("TextButton")
 km.Size = UDim2.new(1, 0, 0.05, 0)
