@@ -1,6 +1,6 @@
 
 local gui = Instance.new("ScreenGui")
-gui.Name = "patrickGui"
+gui.Name = "kmklleelar"
 gui.Parent = game.CoreGui
 
 --///patrick gui maker///--
@@ -538,6 +538,20 @@ hi.MouseButton1Down:connect(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AyoReaper/Cryptic/refs/heads/main/KeySystem"))()
 end)
 
+local evon = Instance.new("TextButton")
+evon.Size = UDim2.new(1, 0, 0.05, 0)
+evon.Position = UDim2.new(0.5, 0, 0.05, 0)
+evon.BackgroundColor3 = Color3.new(0, 0, 0)
+evon.BorderColor3 = Color3.new(0, 0, 1)
+evon.BorderSizePixel = 1
+evon.Text = "Evon"
+evon.BackgroundTransparency = 0 
+evon.TextColor3 = Color3.new(255, 255, 255)
+evon.Font = Enum.Font.Code
+evon.Parent = sf3
+evon.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SkieAdmin/EvonAndroidGUI/main/EvonRBLX.lua"))()
+end)
 
 
 game.StarterGui:SetCore("SendNotification",  {
