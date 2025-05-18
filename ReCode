@@ -482,6 +482,49 @@ fpsu.MouseButton1Down:connect(function()
 loadstring(game:HttpGet("https://pastebin.com/raw/qcqBuz16"))()
 end)
 
+local f3 = Instance.new("Frame")
+f3.Size = UDim2.new(0.15, 0, 0.9, 0)
+f3.Position = UDim2.new(0.65, 0, 0, 0)
+f3.BackgroundColor3 = Color3.new(0, 0, 0)
+f3.BorderColor3 = Color3.new(0, 0, 1)
+f3.BorderSizePixel = 1
+f3.Active = true
+f3.BackgroundTransparency = 0 
+f3.Draggable = true
+f3.Parent = main
+
+
+local name3 = Instance.new("TextLabel")
+name3.Size = UDim2.new(1, 0, 0.05, 0)
+name3.Position = UDim2.new(0.0, 0, 0, 0)
+name3.BackgroundColor3 = Color3.new(0, 0, 0)
+name3.BorderColor3 = Color3.new(0, 0, 1)
+name3.BorderSizePixel = 1
+name3.Text = "Executors"
+name3.BackgroundTransparency = 0 
+name3.TextColor3 = Color3.new(255, 255, 255)
+name3.Font = Enum.Font.Code
+name3.Parent = f3
+name3.TextSize = 16
+
+local sf3 = Instance.new("ScrollingFrame")
+sf3.Size = UDim2.new(1, 0, 0.95, 0)
+sf3.Position = UDim2.new(0, 0, 0.05, 0)
+sf3.BackgroundColor3 = Color3.new(0, 0, 0)
+sf3.BorderColor3 = Color3.new(0, 0, 1)
+sf3.BorderSizePixel = 1
+sf3.Parent = f3
+sf3.BackgroundTransparency = 0 
+sf3.ScrollBarThickness = 0
+
+local lidt3 = Instance.new("UIListLayout")
+lidt3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+lidt3.SortOrder = Enum.SortOrder.LayoutOrder
+lidt3.Padding = UDim.new(0, 3)
+lidt3.Parent = sf2
+
+
+
 
 
 
