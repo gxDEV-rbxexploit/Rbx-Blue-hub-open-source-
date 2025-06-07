@@ -722,6 +722,6 @@ own1.Parent = crd
 
 game.StarterGui:SetCore("SendNotification",  {
  Title = "Warning";
- Text = "This script is now outdated. DM me for new script";
- Duration = 30;
+ Text = "idk";
+ Duration = 7;
 })
